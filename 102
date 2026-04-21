@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+class ResultAnalyzer
+{
+public:
+    int calculateResult(int mark1, int mark2)
+    {
+        return mark1 + mark2;
+    }
+
+    int calculateResult(int mark1, int mark2, int mark3)
+    {
+        return mark1 + mark2 + mark3;
+    }
+
+    double calculateResult(double total_marks, int subjects)
+    {
+        return total_marks / subjects;
+    }
+};
+
+int main()
+{
+    ResultAnalyzer analyzer_object;
+
+    int mark1;
+    int mark2;
+    int mark3;
+
+    cout << "Enter mark 1: ";
+    cin >> mark1;
+
+    cout << "Enter mark 2: ";
+    cin >> mark2;
+
+    cout << "Enter mark 3: ";
+    cin >> mark3;
+
+    int total_two = analyzer_object.calculateResult(mark1, mark2);
+    int total_three = analyzer_object.calculateResult(mark1, mark2, mark3);
+    double average = analyzer_object.calculateResult((double)total_three, 3);
+
+    cout << "Total of 2 subjects: " << total_two << endl;
+    cout << "Total of 3 subjects: " << total_three << endl;
+    cout << "Average marks: " << average << endl;
+
+    return 0;
+}
